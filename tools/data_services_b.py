@@ -7,8 +7,7 @@ SERVICES_B = [
         "nav": "Dentures",
         "img": "images/clear-retainer.jpg",
         "banner": "images/clear-retainer.jpg",
-        "card": "Complete and partial dentures, plus implant-supported options for anyone whose "
-                "current set slips while eating or talking.",
+        "card": "Complete and partial dentures, including implant-supported options.",
         "meta": "Complete and partial dentures in Vavol, Gandhinagar. Comfortable, well-fitting "
                 "dentures at Samarth Dental Clinic.",
         "intro": [
@@ -58,8 +57,7 @@ SERVICES_B = [
         "nav": "Wisdom Tooth Removal",
         "img": "images/oral-surgery.jpg",
         "banner": "images/oral-surgery.jpg",
-        "card": "Planned surgical removal of impacted or painful wisdom teeth, with clear aftercare "
-                "so healing is straightforward.",
+        "card": "Removal of impacted or painful wisdom teeth under local anaesthesia.",
         "meta": "Wisdom tooth extraction in Vavol, Gandhinagar. Impacted third molar removal at "
                 "Samarth Dental Clinic.",
         "intro": [
@@ -109,8 +107,7 @@ SERVICES_B = [
         "nav": "Teeth Cleaning",
         "img": "images/dental-mirror.jpg",
         "banner": "images/dental-mirror.jpg",
-        "card": "Ultrasonic scaling and polishing that removes the hardened tartar and stain a "
-                "toothbrush physically cannot shift.",
+        "card": "Scaling and polishing to remove tartar and stains from the teeth.",
         "meta": "Teeth cleaning, scaling and polishing in Vavol, Gandhinagar at Samarth Dental "
                 "Clinic. Six-monthly dental hygiene visits.",
         "intro": [
@@ -158,8 +155,7 @@ SERVICES_B = [
         "nav": "Tooth-Coloured Fillings",
         "img": "images/dental-exam.jpg",
         "banner": "images/dental-exam.jpg",
-        "card": "Composite fillings bonded and shaded to match your tooth, so repaired cavities are "
-                "invisible &mdash; no silver, no mercury.",
+        "card": "Tooth-coloured composite fillings to repair cavities without silver amalgam.",
         "meta": "Tooth-coloured composite fillings in Vavol, Gandhinagar. Mercury-free cavity "
                 "treatment at Samarth Dental Clinic.",
         "intro": [
@@ -207,8 +203,7 @@ SERVICES_B = [
         "nav": "Kids Dentistry",
         "img": "images/kids-dentistry.jpg",
         "banner": "images/kids-dentistry.jpg",
-        "card": "Gentle check-ups, fluoride, sealants and milk-tooth treatment &mdash; with first visits "
-                "kept short so children leave without any fear.",
+        "card": "Check-ups, fluoride, sealants and treatment for milk teeth.",
         "meta": "Children's dentist in Vavol, Gandhinagar. Kids check-ups, fluoride, sealants and "
                 "milk tooth treatment at Samarth Dental Clinic.",
         "intro": [
@@ -259,8 +254,7 @@ SERVICES_B = [
         "nav": "Gum Disease Treatment",
         "img": "images/dental-care.jpg",
         "banner": "images/dental-care.jpg",
-        "card": "Treatment for bleeding, receding or infected gums &mdash; the leading cause of adult "
-                "tooth loss, and largely reversible when caught early.",
+        "card": "Treatment for bleeding, receding or infected gums.",
         "meta": "Gum disease and periodontal treatment in Vavol, Gandhinagar. Bleeding gums, "
                 "receding gums and gum surgery at Samarth Dental Clinic.",
         "intro": [

@@ -190,12 +190,12 @@ def header(services):
 def cta_band():
     return f"""  <section class="cta-band">
     <div class="container cta-band-inner">
-      <div data-reveal>
-        <h2>Your healthier smile starts with one appointment</h2>
-        <p>Tell us what is bothering you and we will find you a slot that fits &mdash; usually the same day.</p>
+      <div>
+        <h2>Book an Appointment</h2>
+        <p>Call or WhatsApp the clinic and we will confirm a time that works for you.</p>
       </div>
-      <div class="cta-band-actions" data-reveal data-reveal-delay="120">
-        <a class="btn btn-gold" href="appointment.html">Book Appointment</a>
+      <div class="cta-band-actions">
+        <a class="btn" href="appointment.html">Book Appointment</a>
         <a class="btn btn-ghost-light" href="tel:{CLINIC['phone_link']}">{icon('phone', 18)} Call Now</a>
       </div>
     </div>
@@ -231,8 +231,8 @@ def footer(services):
             <span class="logo-mark"><img src="images/logo-mark.png" alt=""></span>
             <span><strong>{CLINIC['name']}</strong><small>Vavol &middot; Gandhinagar</small></span>
           </div>
-          <p>A single-roof dental practice in Vavol founded by {CLINIC['doctor']}, built around gentle
-          treatment, honest advice and costs you are told about before work begins.</p>
+          <p>Dental clinic in Vavol, Gandhinagar. Implants, root canal, braces, cleaning, fillings
+          and kids dentistry.</p>
           <div class="socials">
             <a href="https://www.google.com/maps/search/?api=1&amp;query={CLINIC['maps_query']}" target="_blank" rel="noopener" aria-label="Find us on Google">{icon('google', 18)}</a>
             <a href="https://wa.me/{CLINIC['whatsapp']}" target="_blank" rel="noopener" aria-label="WhatsApp the clinic">{icon('chat', 18)}</a>
@@ -314,7 +314,7 @@ def page(filename, title, description, body, services, extra_schema=None):
   <title>{title}</title>
   <meta name="description" content="{description}">
   <link rel="canonical" href="{canonical}">
-  <meta name="theme-color" content="#0a2540">
+  <meta name="theme-color" content="#0e8a80">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{CLINIC['name']}">
   <meta property="og:title" content="{title}">
@@ -326,9 +326,8 @@ def page(filename, title, description, body, services, extra_schema=None):
   <link rel="apple-touch-icon" href="images/apple-touch.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add("js");</script>
 {ld}
 </head>
 <body>

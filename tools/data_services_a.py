@@ -7,8 +7,7 @@ SERVICES_A = [
         "nav": "Dental Implants",
         "img": "images/dental-implants.jpg",
         "banner": "images/dental-implants.jpg",
-        "card": "A titanium root placed in the jaw to carry a single crown, a bridge or a full arch "
-                "&mdash; the closest thing there is to getting your own tooth back.",
+        "card": "Replace a missing tooth with a titanium implant and a matching crown.",
         "meta": "Dental implants in Vavol, Gandhinagar at Samarth Dental Clinic. Single tooth, "
                 "multiple teeth and full-arch implant treatment by Dr. Dhvani Joshi.",
         "intro": [
@@ -59,8 +58,7 @@ SERVICES_A = [
         "nav": "Root Canal Treatment",
         "img": "images/treatment.jpg",
         "banner": "images/treatment.jpg",
-        "card": "The treatment that saves a badly decayed or infected tooth instead of removing it "
-                "&mdash; usually finished in one or two comfortable sittings.",
+        "card": "Save an infected tooth with root canal treatment, usually in one or two visits.",
         "meta": "Painless root canal treatment (RCT) in Vavol, Gandhinagar. Single-sitting RCT and "
                 "crowns at Samarth Dental Clinic by Dr. Dhvani Joshi.",
         "intro": [
@@ -110,8 +108,7 @@ SERVICES_A = [
         "nav": "Braces &amp; Aligners",
         "img": "images/braces-metal.jpg",
         "banner": "images/braces-metal.jpg",
-        "card": "Straighten crowded, gapped or protruding teeth with metal braces, ceramic braces or "
-                "near-invisible clear aligners.",
+        "card": "Straighten crowded or gapped teeth with metal braces, ceramic braces or clear aligners.",
         "meta": "Braces and clear aligner treatment in Vavol, Gandhinagar. Metal, ceramic and "
                 "invisible options at Samarth Dental Clinic.",
         "intro": [
@@ -160,8 +157,7 @@ SERVICES_A = [
         "nav": "Smile Design &amp; Veneers",
         "img": "images/smile-closeup.jpg",
         "banner": "images/smile-closeup.jpg",
-        "card": "A planned combination of veneers, crowns, whitening and reshaping that corrects the "
-                "colour, shape and proportion of your front teeth.",
+        "card": "Improve the colour and shape of front teeth with veneers, crowns or whitening.",
         "meta": "Smile design and dental veneers in Vavol, Gandhinagar. Planned cosmetic dentistry "
                 "at Samarth Dental Clinic by Dr. Dhvani Joshi.",
         "intro": [
@@ -210,8 +206,7 @@ SERVICES_A = [
         "nav": "Teeth Whitening",
         "img": "images/teeth-whitening.jpg",
         "banner": "images/teeth-whitening.jpg",
-        "card": "Professional bleaching that lifts years of tea, coffee and tobacco staining in a "
-                "single appointment, without damaging the enamel.",
+        "card": "In-clinic whitening to reduce stains from tea, coffee and tobacco.",
         "meta": "Professional teeth whitening in Vavol, Gandhinagar. Safe in-clinic bleaching at "
                 "Samarth Dental Clinic.",
         "intro": [
@@ -259,8 +254,7 @@ SERVICES_A = [
         "nav": "Crowns &amp; Bridges",
         "img": "images/digital-scan.jpg",
         "banner": "images/digital-scan.jpg",
-        "card": "Zirconia and ceramic crowns that rebuild a broken or root-treated tooth, and "
-                "bridges that close a gap without surgery.",
+        "card": "Zirconia and ceramic crowns to rebuild a tooth, and bridges to close a gap.",
         "meta": "Dental crowns and bridges in Vavol, Gandhinagar. Zirconia, ceramic and metal-free "
                 "options at Samarth Dental Clinic.",
         "intro": [

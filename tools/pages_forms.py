@@ -4,43 +4,32 @@ from chrome import STARS, banner, hours_block, icon
 from data_clinic import CLINIC, FAQS, REVIEWS
 
 TIPS = [
-    ("Brush for two minutes, twice &mdash; and mean it",
-     "Most people brush for under 45 seconds and believe it was two minutes. Use a timer or a song "
-     "once and you will see the gap. Two minutes, soft bristles, small circles, and angle the brush "
-     "towards the gum line rather than scrubbing straight across it."),
-    ("The gaps between teeth are where trouble starts",
-     "A brush cleans three of the five surfaces of a tooth. The two it cannot reach are exactly where "
-     "decay and gum disease begin. Floss or an interdental brush once a day does more for your teeth "
-     "than upgrading your toothbrush ever will."),
-    ("Do not rinse straight after brushing",
-     "Rinsing with water washes away the fluoride your toothpaste just deposited. Spit, and leave it. "
-     "It is the single easiest improvement most people can make to their routine."),
-    ("Bleeding gums are a signal, not a normal event",
-     "Healthy gums do not bleed when brushed, any more than a healthy scalp bleeds when combed. "
-     "Bleeding means inflammation &mdash; and at the early stage it is completely reversible with a "
-     "cleaning and better technique. Ignored, it becomes bone loss that does not come back."),
-    ("Sugar frequency matters more than sugar quantity",
-     "One dessert does less damage than sipping a sweet drink over three hours. Every exposure starts "
-     "an acid attack lasting roughly 20 minutes. Keep sugar to mealtimes and let your teeth recover in "
-     "between."),
-    ("Sensitivity is worth mentioning early",
-     "A twinge at cold air or sweet food can mean a cavity, a crack, receding gums or worn enamel &mdash; "
-     "all of which are simpler and cheaper to treat early. Sensitive toothpaste masks the symptom; it "
-     "does not fix the cause."),
-    ("A cracked tooth will not heal itself",
-     "Enamel is not bone &mdash; it cannot repair. A small chip is a filling; the same tooth left for a year "
-     "becomes a crown or a root canal. Get it looked at while it is still the cheap version."),
-    ("Six-monthly check-ups are the cheapest dentistry there is",
-     "The point of a check-up is not the check-up. It is catching a cavity while it still needs a "
-     "20-minute filling instead of a root canal and a crown. Almost every expensive treatment we do "
-     "started as something small that nobody looked at."),
+    ("Brush twice a day",
+     "Brush for two minutes, morning and night, with a soft brush. Use small circles and angle the "
+     "brush towards the gum line."),
+    ("Clean between the teeth",
+     "A toothbrush cannot reach between teeth. Floss or use an interdental brush once a day."),
+    ("Do not rinse after brushing",
+     "Spit out the toothpaste and leave the fluoride on the teeth. Rinsing with water washes it away."),
+    ("Bleeding gums",
+     "Healthy gums should not bleed when you brush. Bleeding usually means gum inflammation. A "
+     "cleaning and better brushing often settles it if treated early."),
+    ("Sugar and teeth",
+     "How often you have sugar matters more than how much. Keep sweets and sweet drinks to mealtimes."),
+    ("Tooth sensitivity",
+     "Pain with cold, sweet food or air can mean a cavity, a crack or receding gums. Mention it at "
+     "your check-up rather than only using sensitive toothpaste."),
+    ("Cracked or chipped teeth",
+     "Enamel does not heal. A small chip can often be filled. Left alone it may need a crown or a "
+     "root canal."),
+    ("Regular check-ups",
+     "A check-up every six months helps catch a cavity while it still needs a filling, not a root "
+     "canal."),
 ]
 
 
-# --------------------------------------------------------------------------- #
-
 def reviews(services):
-    cards = "".join(f"""        <article class="quote-card" data-reveal data-reveal-delay="{i % 3 * 80}">
+    cards = "".join(f"""        <article class="quote-card">
           <p class="stars" aria-label="Rated 5 out of 5">{STARS}</p>
           <blockquote>{text}</blockquote>
           <div class="quote-who">
@@ -48,7 +37,7 @@ def reviews(services):
             <span><strong>{name}</strong><span>Google review</span></span>
           </div>
         </article>
-""" for i, (name, initials, text) in enumerate(REVIEWS))
+""" for name, initials, text in REVIEWS)
 
     body = banner(
         "Patient Reviews",
@@ -57,41 +46,26 @@ def reviews(services):
         "images/happy-patient.jpg",
     ) + f"""  <section class="section">
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <span class="kicker">In our patients' words</span>
-        <h2 class="h-lg">{CLINIC['reviews']}+ reviews, and an average of {CLINIC['rating']}</h2>
-        <p>These are reviews left by patients on Google, reproduced as written apart from trimming for
-        length.</p>
+      <div class="section-head center">
+        <h2>What Patients Say</h2>
+        <p>Reviews left on Google, shown as written apart from trimming for length.</p>
       </div>
       <div class="service-grid">
 {cards}      </div>
-      <div style="text-align:center;margin-top:52px" data-reveal>
-        <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query={CLINIC['maps_query']}" target="_blank" rel="noopener">See our Google listing</a>
+      <div class="block-cta">
+        <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query={CLINIC['maps_query']}" target="_blank" rel="noopener">See Google Reviews</a>
       </div>
     </div>
   </section>
 
-  <section class="section-sm bg-ink">
-    <div class="container">
-      <div class="counter-row" data-reveal>
-        <div class="counter-cell"><strong data-count="5.0">5.0</strong><span>Average rating</span></div>
-        <div class="counter-cell"><strong data-count="158" data-suffix="+">158+</strong><span>Total reviews</span></div>
-        <div class="counter-cell"><strong data-count="157">157</strong><span>Five-star reviews</span></div>
-        <div class="counter-cell"><strong data-count="6">6</strong><span>Days open weekly</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section bg-sky">
     <div class="container" style="text-align:center">
-      <span class="kicker" style="justify-content:center" data-reveal>Been treated here?</span>
-      <h2 class="h-lg" style="margin-inline:auto;max-width:680px" data-reveal>A review helps the next
-      nervous patient decide</h2>
-      <p style="margin:18px auto 32px;max-width:560px" data-reveal>If your treatment went well, saying so
-      publicly is the kindest thing you can do for someone sitting at home putting off a phone call.</p>
-      <div class="hero-actions" style="justify-content:center" data-reveal>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query={CLINIC['maps_query']}" target="_blank" rel="noopener">Leave a Google review</a>
-        <a class="btn btn-outline" href="appointment.html">Book an appointment</a>
+      <h2>Leave a Review</h2>
+      <p style="margin:12px auto 24px;max-width:520px">If you have been treated here, a Google review
+      helps other patients decide.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query={CLINIC['maps_query']}" target="_blank" rel="noopener">Write a Google Review</a>
+        <a class="btn btn-outline" href="appointment.html">Book Appointment</a>
       </div>
     </div>
   </section>
@@ -105,17 +79,15 @@ def reviews(services):
     )
 
 
-# --------------------------------------------------------------------------- #
-
 def contact(services):
     body = banner(
-        "Contact Samarth Dental Clinic",
-        "Vavol, Gandhinagar &mdash; call, WhatsApp or simply walk in during clinic hours.",
+        "Contact Us",
+        "Call, WhatsApp or visit the clinic in Vavol, Gandhinagar.",
         [("Contact", None)],
         "images/reception.jpg",
     ) + f"""  <section class="section">
     <div class="container">
-      <div class="info-strip-grid" data-reveal>
+      <div class="info-strip-grid" style="border:1px solid var(--line)">
         <div class="info-tile">
           <span class="info-tile-icon">{icon('phone', 22)}</span>
           <div>
@@ -126,7 +98,7 @@ def contact(services):
         <div class="info-tile">
           <span class="info-tile-icon">{icon('pin', 22)}</span>
           <div>
-            <h3>Clinic address</h3>
+            <h3>Address</h3>
             <p>{CLINIC['street']},<br>{CLINIC['area']} {CLINIC['pin']}</p>
           </div>
         </div>
@@ -143,18 +115,17 @@ def contact(services):
 
   <section class="section" style="padding-top:0">
     <div class="container with-side">
-      <div data-reveal>
+      <div>
         <div class="section-head">
-          <span class="kicker">Send us a message</span>
-          <h2 class="h-lg">Tell us what is troubling you</h2>
-          <p>Fill this in and it opens WhatsApp with your message ready to send, so we can reply
-          quickly. Prefer to talk? Just call the clinic.</p>
+          <h2>Send a Message</h2>
+          <p>Fill the form and it opens WhatsApp with your message ready to send. You can also call
+          the clinic.</p>
         </div>
         <div class="form-card">
           <form data-form data-form-title="Website enquiry — Samarth Dental Clinic" novalidate>
             <div class="form-alert">
               <span>{icon('smile', 20)}</span>
-              <span>Thank you &mdash; your message has been prepared in WhatsApp. If it did not open, please
+              <span>Thank you. Your message has been prepared in WhatsApp. If it did not open, please
               call us on {CLINIC['phone_display']}.</span>
             </div>
             <div class="form-grid">
@@ -168,7 +139,7 @@ def contact(services):
                        pattern="[0-9+ ]{{10,15}}" required>
               </div>
               <div class="field full">
-                <label for="c-subject">What is it about?</label>
+                <label for="c-subject">Subject</label>
                 <select id="c-subject" name="Subject">
                   <option>General enquiry</option>
                   <option>Toothache or emergency</option>
@@ -178,8 +149,8 @@ def contact(services):
                 </select>
               </div>
               <div class="field full">
-                <label for="c-message">Your message <span class="req">*</span></label>
-                <textarea id="c-message" name="Message" placeholder="Describe the problem, how long it has been going on, and anything you have already been told." required></textarea>
+                <label for="c-message">Message <span class="req">*</span></label>
+                <textarea id="c-message" name="Message" placeholder="Describe the problem and how long it has been going on." required></textarea>
               </div>
             </div>
             <p class="form-note">We use your details only to reply to this enquiry.</p>
@@ -190,19 +161,19 @@ def contact(services):
         </div>
       </div>
 
-      <aside class="side-stack" data-reveal data-reveal-delay="120">
+      <aside class="side-stack">
         <div class="side-card contrast">
-          <h3>Call the clinic</h3>
-          <p>Fastest way to get an appointment confirmed.</p>
+          <h3>Call the Clinic</h3>
+          <p>Fastest way to confirm an appointment.</p>
           <a class="phone" href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>
-          <a class="btn btn-gold btn-block" href="https://wa.me/{CLINIC['whatsapp']}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn btn-block" href="https://wa.me/{CLINIC['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="side-card">
-          <h3>Clinic hours</h3>
+          <h3>Clinic Hours</h3>
           {hours_block()}
         </div>
         <div class="side-card">
-          <h3>Getting here</h3>
+          <h3>How to Reach</h3>
           <p style="font-size:15px">{CLINIC['street']}, {CLINIC['area']}, {CLINIC['state']} {CLINIC['pin']}</p>
           <p style="font-size:15px;margin-top:12px"><strong>Landmark:</strong> {CLINIC['landmark']}</p>
           <p style="font-size:15px;margin-top:12px"><strong>Plus code:</strong> {CLINIC['plus_code']}</p>
@@ -215,7 +186,7 @@ def contact(services):
 
   <section class="section-sm bg-sky">
     <div class="container">
-      <div class="map-frame" data-reveal>
+      <div class="map-frame">
         <iframe title="Map to Samarth Dental Clinic, Vavol, Gandhinagar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://maps.google.com/maps?q={CLINIC['maps_query']}&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
       </div>
@@ -231,32 +202,29 @@ def contact(services):
     )
 
 
-# --------------------------------------------------------------------------- #
-
 def appointment(services):
     options = "".join(
         f'<option>{s["name"].replace("&amp;", "and")}</option>' for s in services
     )
     body = banner(
         "Book an Appointment",
-        "Monday to Saturday, mornings and evenings. Most requests are confirmed the same day.",
+        "Monday to Saturday, 10 AM&ndash;1 PM and 4 PM&ndash;7 PM.",
         [("Book Appointment", None)],
         "images/consultation.jpg",
     ) + f"""  <section class="section">
     <div class="container with-side">
-      <div data-reveal>
+      <div>
         <div class="section-head">
-          <span class="kicker">Request a slot</span>
-          <h2 class="h-lg">Pick a day and we will confirm the time</h2>
-          <p>Submitting this opens WhatsApp with your request written out, so all you do is press send.
-          We reply with a confirmed time &mdash; usually within clinic hours the same day.</p>
+          <h2>Appointment Request</h2>
+          <p>Submitting this form opens WhatsApp with your request written out. We reply with a
+          confirmed time, usually the same day.</p>
         </div>
         <div class="form-card">
           <form data-form data-form-title="Appointment request — Samarth Dental Clinic" novalidate>
             <div class="form-alert">
               <span>{icon('calendar', 20)}</span>
               <span>Your appointment request is ready in WhatsApp. If it did not open, call us on
-              {CLINIC['phone_display']} and we will book you in.</span>
+              {CLINIC['phone_display']}.</span>
             </div>
             <div class="form-grid">
               <div class="field">
@@ -295,42 +263,40 @@ def appointment(services):
               </div>
               <div class="field full">
                 <label for="a-notes">Anything we should know</label>
-                <textarea id="a-notes" name="Notes" placeholder="Describe your symptoms, any medical conditions or medication, and whether you are nervous about treatment — it genuinely helps us prepare."></textarea>
+                <textarea id="a-notes" name="Notes" placeholder="Symptoms, medical conditions or if you are nervous about treatment."></textarea>
               </div>
             </div>
-            <p class="form-note">Sunday is a clinic holiday, so please choose Monday to Saturday.
-            Emergencies are fitted in outside the listed slots wherever possible.</p>
+            <p class="form-note">Sunday is a clinic holiday. Please choose Monday to Saturday.</p>
             <div style="margin-top:24px">
-              <button class="btn" type="submit">{icon('calendar', 18)} Send appointment request</button>
+              <button class="btn" type="submit">{icon('calendar', 18)} Send Request</button>
             </div>
           </form>
         </div>
       </div>
 
-      <aside class="side-stack" data-reveal data-reveal-delay="120">
+      <aside class="side-stack">
         <div class="side-card contrast">
-          <h3>Rather just call?</h3>
-          <p>Ring the clinic and we will book you in there and then.</p>
+          <h3>Call to Book</h3>
+          <p>Ring the clinic and we will book you in.</p>
           <a class="phone" href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>
-          <a class="btn btn-gold btn-block" href="https://wa.me/{CLINIC['whatsapp']}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn btn-block" href="https://wa.me/{CLINIC['whatsapp']}" target="_blank" rel="noopener">WhatsApp</a>
         </div>
         <div class="side-card">
-          <h3>Clinic hours</h3>
+          <h3>Clinic Hours</h3>
           {hours_block()}
         </div>
         <div class="side-card">
-          <h3>Bring with you</h3>
+          <h3>Please Bring</h3>
           <ul class="ticks" style="gap:11px">
-            <li>Any previous X-rays or dental reports</li>
-            <li>A list of medicines you take</li>
+            <li>Previous X-rays or dental reports</li>
+            <li>List of medicines you take</li>
             <li>Details of medical conditions such as diabetes</li>
-            <li>Your questions &mdash; written down if it helps</li>
           </ul>
         </div>
         <div class="side-card">
-          <h3>Payments accepted</h3>
-          <p style="font-size:15px">Cash, UPI, cards and NFC mobile payments. You will have the cost of
-          your treatment in writing before it starts.</p>
+          <h3>Payments</h3>
+          <p style="font-size:15px">Cash, UPI, cards and NFC mobile payments. Cost is given in writing
+          before treatment starts.</p>
         </div>
       </aside>
     </div>
@@ -345,8 +311,6 @@ def appointment(services):
     )
 
 
-# --------------------------------------------------------------------------- #
-
 def faq(services):
     items = "".join(f"""        <div class="ac-item{' open' if i == 0 else ''}">
           <button class="ac-head" type="button" aria-expanded="{'true' if i == 0 else 'false'}">
@@ -357,38 +321,36 @@ def faq(services):
 """ for i, (q, a) in enumerate(FAQS))
 
     body = banner(
-        "Frequently Asked Questions",
-        "Costs, timings, pain, sterilisation and everything else patients ask before booking.",
+        "FAQs",
+        "Common questions about treatment, timings and booking.",
         [("FAQs", None)],
         "images/treatment-plan.jpg",
     ) + f"""  <section class="section">
     <div class="container with-side">
-      <div data-reveal>
+      <div>
         <div class="section-head">
-          <span class="kicker">Before you book</span>
-          <h2 class="h-lg">Questions we are asked most</h2>
+          <h2>Frequently Asked Questions</h2>
         </div>
         <div class="accordion">
 {items}        </div>
         <div class="callout" style="margin-top:36px">
-          <p><strong>Still unsure about something?</strong> Call
-          <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a> and ask. We would much
-          rather answer a question on the phone than have you put off a visit.</p>
+          <p>Still have a question? Call
+          <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>.</p>
         </div>
       </div>
-      <aside class="side-stack" data-reveal data-reveal-delay="120">
+      <aside class="side-stack">
         <div class="side-card contrast">
-          <h3>Ask us directly</h3>
+          <h3>Ask Us</h3>
           <p>Call or WhatsApp during clinic hours.</p>
           <a class="phone" href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>
-          <a class="btn btn-gold btn-block" href="contact.html">Send a message</a>
+          <a class="btn btn-block" href="contact.html">Send a Message</a>
         </div>
         <div class="side-card">
-          <h3>Clinic hours</h3>
+          <h3>Clinic Hours</h3>
           {hours_block()}
         </div>
         <div class="side-card">
-          <h3>Popular treatments</h3>
+          <h3>Treatments</h3>
           <div class="side-nav">
 {"".join(f'<a href="{s["slug"]}.html">{s["nav"]}</a>' for s in services[:6])}
           </div>
@@ -418,35 +380,30 @@ def faq(services):
     )
 
 
-# --------------------------------------------------------------------------- #
-
 def dental_tips(services):
-    cards = "".join(f"""        <article class="feature-card" data-reveal data-reveal-delay="{i % 3 * 80}">
+    cards = "".join(f"""        <article class="feature-card">
           <span class="feature-icon">{icon('tooth', 26)}</span>
           <h3>{title}</h3>
           <p>{text}</p>
         </article>
-""" for i, (title, text) in enumerate(TIPS))
+""" for title, text in TIPS)
 
     body = banner(
         "Dental Care Tips",
-        "Practical advice we find ourselves repeating in the chair most days.",
+        "Simple advice for looking after your teeth at home.",
         [("Dental Tips", None)],
         "images/oral-care.jpg",
     ) + f"""  <section class="section">
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <span class="kicker">Look after them at home</span>
-        <h2 class="h-lg">Eight things that genuinely make a difference</h2>
-        <p>None of this replaces a check-up, but it is the advice that saves our patients the most money
-        over a lifetime.</p>
+      <div class="section-head center">
+        <h2>Home Care Tips</h2>
+        <p>This does not replace a check-up. If something hurts or bleeds, call the clinic.</p>
       </div>
       <div class="feature-grid">
 {cards}      </div>
-      <div class="callout" style="margin-top:52px" data-reveal>
-        <p><strong>One caveat.</strong> General advice cannot diagnose your mouth. If something hurts,
-        bleeds, feels loose or has changed, have it looked at rather than managed with a different
-        toothpaste &mdash; call <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>.</p>
+      <div class="callout" style="margin-top:40px">
+        <p>If a tooth hurts, feels loose or has changed, call
+        <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>.</p>
       </div>
     </div>
   </section>
@@ -460,8 +417,6 @@ def dental_tips(services):
     )
 
 
-# --------------------------------------------------------------------------- #
-
 def not_found(services):
     body = banner(
         "Page not found",
@@ -470,14 +425,12 @@ def not_found(services):
         "images/clinic-interior.jpg",
     ) + f"""  <section class="section">
     <div class="container" style="text-align:center">
-      <span class="kicker" style="justify-content:center" data-reveal>Error 404</span>
-      <h2 class="h-lg" style="margin-inline:auto;max-width:640px" data-reveal>Let us get you back on
-      track</h2>
-      <p style="margin:18px auto 34px;max-width:520px" data-reveal>Try our list of treatments, or simply
-      call the clinic on {CLINIC['phone_display']} and we will help.</p>
-      <div class="hero-actions" style="justify-content:center" data-reveal>
-        <a class="btn" href="index.html">Back to home</a>
-        <a class="btn btn-outline" href="services.html">All treatments</a>
+      <h2>Page not found</h2>
+      <p style="margin:16px auto 28px;max-width:480px">Try the home page or our list of treatments.
+      You can also call {CLINIC['phone_display']}.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn" href="index.html">Back to Home</a>
+        <a class="btn btn-outline" href="services.html">All Services</a>
       </div>
     </div>
   </section>

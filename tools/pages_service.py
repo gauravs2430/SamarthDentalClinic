@@ -14,20 +14,19 @@ def _side_nav(services, current):
 
 def _related(services, current):
     picks = [s for s in services if s["slug"] != current][:3]
-    cards = "".join(f"""        <article class="service-card" data-reveal>
+    cards = "".join(f"""        <article class="service-card">
           <div class="service-thumb"><img src="{s['img']}" alt="{s['name'].replace('&amp;', 'and')}" loading="lazy"></div>
           <div class="service-body">
             <h3>{s['name']}</h3>
             <p>{s['card']}</p>
-            <a class="link-arrow" href="{s['slug']}.html">Learn more</a>
+            <a class="link-arrow" href="{s['slug']}.html">Read More</a>
           </div>
         </article>
 """ for s in picks)
     return f"""  <section class="section bg-sky">
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <span class="kicker">Related treatments</span>
-        <h2 class="h-lg">You may also be looking for</h2>
+      <div class="section-head center">
+        <h2>Related Treatments</h2>
       </div>
       <div class="service-grid">
 {cards}      </div>
@@ -42,11 +41,11 @@ def build(service, services):
     intro = "".join(f"<p>{p}</p>" for p in service["intro"])
     signs = "".join(f"<li>{s}</li>" for s in service["signs"])
     benefits = "".join(f"<li>{b}</li>" for b in service["benefits"])
-    steps = "".join(f"""        <article class="step" data-reveal data-reveal-delay="{i * 80}">
+    steps = "".join(f"""        <article class="step">
           <h3>{title}</h3>
           <p>{text}</p>
         </article>
-""" for i, (title, text) in enumerate(service["steps"]))
+""" for title, text in service["steps"])
     facts = "".join(f"<tr><th scope='row'>{k}</th><td>{v}</td></tr>" for k, v in service["facts"])
 
     body = banner(
@@ -56,16 +55,16 @@ def build(service, services):
         service["banner"],
     ) + f"""  <section class="section">
     <div class="container with-side">
-      <article class="prose" data-reveal>
+      <article class="prose">
         <figure class="fig">
           <img src="{service['img']}" alt="{plain} at Samarth Dental Clinic, Vavol, Gandhinagar">
-          <figcaption>{plain} at Samarth Dental Clinic &mdash; Vavol, Gandhinagar.</figcaption>
+          <figcaption>{plain} at Samarth Dental Clinic, Vavol.</figcaption>
         </figure>
 
-        <h2 class="h-md">What it is</h2>
+        <h2>About this treatment</h2>
         {intro}
 
-        <h3>Signs you may need this treatment</h3>
+        <h3>When it is needed</h3>
         <ul class="ticks two">{signs}</ul>
 
         <h3>At a glance</h3>
@@ -76,39 +75,37 @@ def build(service, services):
           </table>
         </div>
 
-        <h3>What you gain</h3>
+        <h3>Benefits</h3>
         <ul class="ticks">{benefits}</ul>
 
         <div class="callout">
-          <p><strong>Not sure this is what you need?</strong> That is exactly what a consultation is
-          for. Come in, let us look properly, and you will leave knowing what the problem is and what
-          your options cost &mdash; with no obligation to start that day.</p>
+          <p>Not sure this is what you need? Book a check-up. We will look at the tooth, explain
+          the options and give you the cost before treatment starts.</p>
         </div>
 
-        <h3>Booking your appointment</h3>
-        <p>Call or WhatsApp <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a> and we
-        will find you a slot, usually the same day. The clinic is at {CLINIC['street']},
-        {CLINIC['area']} {CLINIC['pin']} &mdash; {CLINIC['landmark'].lower()} &mdash; open Monday to Saturday,
-        mornings and evenings.</p>
+        <h3>Book an appointment</h3>
+        <p>Call or WhatsApp <a href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>.
+        The clinic is at {CLINIC['street']}, {CLINIC['area']} {CLINIC['pin']},
+        {CLINIC['landmark'].lower()}. Open Monday to Saturday, 10 AM&ndash;1 PM and 4 PM&ndash;7 PM.</p>
       </article>
 
-      <aside class="side-stack" data-reveal data-reveal-delay="120">
+      <aside class="side-stack">
         <div class="side-card">
-          <h3>All treatments</h3>
+          <h3>All Treatments</h3>
           {_side_nav(services, service['slug'])}
         </div>
         <div class="side-card contrast">
-          <h3>Book {plain}</h3>
-          <p>Speak to us about your case and what it will involve.</p>
+          <h3>Book Appointment</h3>
+          <p>Call the clinic to confirm a time.</p>
           <a class="phone" href="tel:{CLINIC['phone_link']}">{CLINIC['phone_display']}</a>
-          <a class="btn btn-gold btn-block" href="appointment.html">Book an appointment</a>
+          <a class="btn btn-block" href="appointment.html">Book Appointment</a>
         </div>
         <div class="side-card">
-          <h3>Clinic hours</h3>
+          <h3>Clinic Hours</h3>
           {hours_block()}
         </div>
         <div class="side-card">
-          <h3>Find us</h3>
+          <h3>Find Us</h3>
           <p style="display:flex;gap:12px">{icon('pin', 18)} <span>{CLINIC['street']},<br>{CLINIC['area']} {CLINIC['pin']}<br>({CLINIC['landmark']})</span></p>
           <p style="margin-top:18px"><a class="link-arrow" href="contact.html">Directions</a></p>
         </div>
@@ -118,9 +115,8 @@ def build(service, services):
 
   <section class="section bg-cream">
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <span class="kicker">The procedure</span>
-        <h2 class="h-lg">How {plain.lower()} is done here</h2>
+      <div class="section-head center">
+        <h2>How Treatment Is Done</h2>
       </div>
       <div class="steps">
 {steps}      </div>
