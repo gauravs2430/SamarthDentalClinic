@@ -183,7 +183,7 @@ def header(services):
       </div>
     </div>
   </header>
-  <div class="nav-backdrop" hidden-role="presentation"></div>
+  <div class="nav-backdrop" aria-hidden="true"></div>
 """
 
 

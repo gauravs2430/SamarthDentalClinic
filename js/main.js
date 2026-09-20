@@ -35,9 +35,12 @@
   function setNav(open) {
     if (!nav) return;
     nav.classList.toggle("open", open);
-    if (backdrop) backdrop.classList.toggle("show", open);
+    document.body.classList.toggle("nav-open", open);
+    if (backdrop) {
+      backdrop.classList.toggle("show", open);
+      backdrop.setAttribute("aria-hidden", open ? "false" : "true");
+    }
     if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    document.body.style.overflow = open ? "hidden" : "";
   }
 
   if (toggle) toggle.addEventListener("click", function () { setNav(!nav.classList.contains("open")); });

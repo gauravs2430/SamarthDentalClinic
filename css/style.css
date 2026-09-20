@@ -1370,6 +1370,18 @@ table.tbl tr:last-child td { border-bottom: 0; }
 .float-top { background: var(--ink); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.25s; }
 .float-top.show { opacity: 1; visibility: visible; }
 
+body.nav-open {
+  overflow: hidden;
+}
+body.nav-open .site-header {
+  z-index: 120;
+}
+body.nav-open .floats {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* --------------------------------------------------------------------------
    Scroll reveal
    -------------------------------------------------------------------------- */
@@ -1488,10 +1500,20 @@ table.tbl tr:last-child td { border-bottom: 0; }
     background: rgba(7, 27, 46, 0.5);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.35s ease, visibility 0.35s;
-    z-index: 80;
+    /* Below .site-header (60). A higher value covers the drawer and eats taps. */
+    z-index: 50;
   }
-  .nav-backdrop.show { opacity: 1; visibility: visible; }
+  .nav-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav {
+    pointer-events: auto;
+  }
 
   .menu-toggle { display: grid; }
   .header-call { display: none; }
